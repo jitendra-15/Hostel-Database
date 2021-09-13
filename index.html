@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <link rel="shortcut icon" href="images/head.svg">
+    <title>Hostel database</title>
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="img">
+                <img src="images/menu.png" alt="menu" class="menu-img">
+                <b>HOSTEL DATA</b>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Register.html">Register</a></li>
+                <li><a href="login.html">login</a></li>
+            </ul>
+        </nav>
+        <div class="text-container">
+            <div class="login">
+                <form id="log_form" method="POST" action="detail.php">
+                    <h2>See your data Here </h2><br>
+                    <hr><br>
+                    <h3>Registeration No. :</h3>
+                    <input class="in" name="rno" type="text" placeholder="Registeration No."><br><br>
+                    <h3> Date Of Birth :</h3>
+                    <input class="in" name="dob" type="date" name="dob" placeholder="Date Of Birth"><br>
+                    <button class="in btn" value="submit" style="background-color: #009688;width: 75%;"> Submit
+                    </button>
+                </form>
+                <br><br>
+            </div>
+            <div class="content">
+                <h2>Welcome to College Of Engineering And Technology, Bhubaneswar</h2><br>
+                <hr>
+                <br>New Student has to Register there data to their repective hostel Database.
+                For Registering yourself click the button below.<br>
+                <button type="button" class="btn"><span class="sbtn"></span><a href="Register.html">REGISTER</a></button><br><br><br>
+                Hostel Superitendent can login here.<br>
+                <button type="button" class="btn"><span class="sbtn"></span><a href="login.html">LOGIN</a></button>
+            </div>
+        </div><br><br><br><br><br><br>
+    </div>
+
+
+    <div class="aboutus">
+        <h1 id="aboutus">About Us</h1><br>
+        <hr style="width: 5%;"><br><br>
+        <div class="text">
+            The College has four hostels, two for boys and two for girls.<br><br>
+            <b><u>Boys Hostel</u> :</b><br><br>
+            <ul>
+                <li>A.P.J. Abdul Kalam Hall Of Residence</li>
+                <li>Ramarjuna Hall Of Residence</li>
+            </ul><br>
+            <b><u>Girls Hostel</u> :</b><br><br>
+            <ul>
+                <li>Kalpana Chawala Hall Of Residence</li>
+                <li>Kasturba Hall Of Residence</li>
+            </ul>
+        </div>
+        <br><h2><b><u>Gallery</u></b> :-</h2>
+
+    </div>
+    <div class="slider-box">
+        <div id="slider">
+            <img src="images/bg2.jpg" alt="" >
+            <img src="images/bg1.jpg" alt="">
+            <img src="images/bg3.jpg" alt="">
+        </div>
+        <div class="indi">
+            <span id="btn1" class="si active"></span>
+            <span id="btn2" class="si"></span>
+            <span id="btn3" class="si"></span>
+        </div>
+    </div>
+    <footer style="background: #009688;">
+        <br>
+        <h1 id="contact">Contact Us</h1><br>
+        <hr style="width: 5%;background: #1d2026;">
+        <br><b><u>For any Queries:</u></b><br><br>
+        Address - College Of Engineering And Technology, Ghatikia,Bhubaneswar - 751003<br>
+        Email - hostelcetbhubaneswarshostel@gmail.com<br>
+        Mobile - +91-8765993241<br><br><br>
+        <br>
+    </footer>
+    <script>
+        var slide = document.getElementById("slider");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        btn1.onclick = function () {
+            slide.style.transform = "translateX(0px)";
+            btn1.classList.add("active");
+            btn2.classList.remove("active");
+            btn3.classList.remove("active");
+        }
+        btn2.onclick = function () {
+            slide.style.transform = "translateX(-100%)";
+            btn1.classList.remove("active");
+            btn3.classList.remove("active");
+            btn2.classList.add("active");
+        }
+        btn3.onclick = function () {
+            slide.style.transform = "translateX(-200%)";
+            btn3.classList.add("active");
+            btn2.classList.remove("active");
+            btn1.classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>

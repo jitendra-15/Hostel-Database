@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+}
+body{
+    background-color: #1d2026;
+}
+.navbar{
+    margin: auto;
+    padding: 35px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: #009688 5px solid;
+}
+nav .menu-img{
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.img{
+    color: #fff;
+    font-size: x-large;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.text-container{
+    display: flex;
+    margin-right: 8%;
+}
+.login{
+    margin-left: 10%;
+    color: #fff;
+    width: 35%;
+    height: 370px;
+    margin-top: 8%;
+    text-align: center;
+}
+.login form{
+    padding: 30px 50px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.in{
+    width: 90%;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    color:#fff;
+    font-size: 18px;
+    border: 1px solid #009688;
+    background-color: #1d2026;
+    margin-top: 30px;
+    border-radius: 30px;
+}
+hr{
+    width: 10%; 
+    height: 3px; 
+    background-color:#009688; 
+    border: none;
+    margin: auto;
+}
+.content{
+    color: #fff;
+    text-align: center;
+    margin-left: 16%;
+    margin-top: 10%;
+    width: 55%  ;
+    display: flexbox;
+}
+.content .btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.btn{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.sbtn{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.btn:hover span{
+    width: 100%;
+}
+.btn:hover{
+    border: none;
+}
+.contact{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.details table{
+    font-size: 25px;
+}
+footer, .aboutus{
+    text-align: center;
+}
+.text{
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}

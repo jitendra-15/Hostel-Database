@@ -1,0 +1,228 @@
+<html>
+
+<head>
+    <link rel="shortcut icon" href="images/head.svg">
+    <title>Hostel database</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form {
+            width: 82%;
+            margin-left: 8%;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            padding: 20px 20px;
+        }
+
+        td {
+            color: navajowhite;
+        }
+
+        input,
+        select,
+        option {
+            padding: 10px 10px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            color: #000;
+        }
+
+        input:hover,
+        select:hover {
+            background: rgb(204, 249, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="img">
+                <img src="images/menu.png" alt="menu" class="menu-img">
+                <b>HOSTEL DATA</b>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="regform">
+            <form method="POST" action="register.php" class="form" onsubmit="return verify()"
+                enctype="multipart/form-data">
+                <h2 style="text-align: center;">Hostel Registration From</h2><br>
+                <hr><br>
+                <table style="margin-left: auto;margin-right: auto;">
+                    <tr>
+                        <td>Full Name</td>
+                        <td> : </td>
+                        <td><input id="name" name="name" type="text" placeholder="Name" required></td>
+                    </tr>
+                    <tr>
+                        <td>Registration No.</td>
+                        <td> : </td>
+                        <td><input id="rno" name="rehNo" type="text+" placeholder="Registration No." required></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No.</td>
+                        <td> : </td>
+                        <td><input id="mob" name="Mob" type="text" placeholder="Mobile No." required></td>
+                    </tr>
+                    <tr>
+                        <td>Branch</td>
+                        <td> : </td>
+                        <td> <select id="bh" name="Branch" required>
+                                <option value="" disabled selected hidden>Select Branch</option>
+                                <option value="B.Arch">B.Arch</option>
+                                <option value="B.Plan">B.Plan</option>
+                                <option value="B.Tech">B.Tech</option>
+                                <option value="M.Tech">M.Tech</option>
+                                <option value="MCA"> MCA </option>
+                                <option value="M.Arch">M.Arch</option>
+                                <option value="M.Plan">M.Plan</option>
+                                <option value="M.Sc">M.Sc</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td> : </td>
+                        <td><input id="email" name="email" type="email" placeholder="Email" required></td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name</td>
+                        <td> : </td>
+                        <td><input id="fname" name="fname" type="text" placeholder="Father's Name" required></td>
+                    </tr>
+                    <tr>
+                        <td>Local Garadian</td>
+                        <td> : </td>
+                        <td><input id="lname" name="lname" type="text" placeholder="Garadian Name"></td>
+                    </tr>
+                    <tr>
+                        <td>Hostel</td>
+                        <td> : </td>
+                        <td>
+                            <select id="host" name="Host" required>
+                                <option value="" disabled selected hidden>Select Hostel</option>
+                                <option value="APJAKHR">A.P.J. Abdul Kalam Hall Of Residence</option>
+                                <option value="RHR">Ramarjuna Hall Of Residence</option>
+                                <option value="KHR">Kasturba Hall Of Residence</option>
+                                <option value="KCHR">Kalapana Chawala Hall Of Residence</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Catagory</td>
+                        <td> : </td>
+                        <td>
+                            <select id="cat" name="cat" required>
+                                <option value="" disabled selected hidden>Catagory</option>
+                                <option value="SC">Scheduled Caste</option>
+                                <option value="ST">Scheduled Tribe</option>
+                                <option value="OBC">Other Backward Class</option>
+                                <option value="GC">General </option>
+                                <option value="EBC">Economically Backward Class</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td> : </td>
+                        <td>
+                            <select id="gen" name="gen" required>
+                                <option value="" disabled selected hidden>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Room No.</td>
+                        <td> : </td>
+                        <td><input id="room" name="rno" type="number" placeholder="Room No." required></td>
+                    </tr>
+                    <tr>
+                        <td>Year Of Addmission</td>
+                        <td> : </td>
+                        <td><input id="year" name="year" type="number" min="2016" max="9999"
+                                placeholder="Addmission Year" required></td>
+                    </tr>
+                    <tr>
+                        <td>Date Of Birth</td>
+                        <td> : </td>
+                        <td><input id="dob" name="dob" type="date" placeholder="Date of Birth" required></td>
+                    </tr>
+                    <tr>
+                        <td>Photo</td>
+                        <td> : </td>
+                        <td><input id="pic" name="pic" type="file" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><button type="submit" class="btn"><span class="sbtn"></span>Submit</button>
+                            <button type="reset" class="btn"><span class="sbtn"></span>Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br><br>
+    </div>
+    <script>
+        function verify() {
+            var roll = document.getElementById("rno").value;
+            var mob = document.getElementById("mob").value;
+            var lname = document.getElementById("lname").value;
+            var hos = document.getElementById("host").value;
+            var gen = document.getElementById("gen").value;
+            var month = document.getElementById("year").value;
+            var dob = new Date(document.getElementById("dob").value);
+            var g = dob.getFullYear();
+            var d = new Date().getFullYear();
+            var regx = /[6-9]\d{9}/;
+            var regxx = /[0-9]{10}/;
+
+            if (roll.length != 10) {
+                alert("Registration Number must have 10 digit.");
+                return false;
+            }
+            else if (!regxx.test(roll)) {
+                alert("Wrong Registration Number.(All character must be numbers.)");
+                return false;
+            }
+            else if (mob.length != 10) {
+                alert("Mobile Number must have 10-digit.");
+                return false;
+            }
+            else if (!regx.test(mob)) {
+                alert("Wrong Mobile Number.(First digit must be started with 6,7,8,9  and other digit must be numbers)");
+                return false;
+            }
+            else if (hos == "RHR" || hos == "APJAKHR") {
+                if (gen != "Male") {
+                    alert("Wrong Hostel or Gender.")
+                    return false;
+                }
+            }
+            else if (hos == "KCHR" || hos == "KHR") {
+                if (gen != "Female") {
+                    alert("Wrong Hostel or Gender.")
+                    return false;
+                }
+            }
+            else if (yr <= d - 4) {
+                alert("Wrong Addmission year");
+                return false;
+            }
+            else if (d <= g + 17) {
+                alert("Wrong Date Of Birth");
+                return false;
+            }
+            else {
+                if (lname.length == 0)
+                    document.getElementById("lname").value = "null";
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
